@@ -1,31 +1,27 @@
-package com.example.bookmall.model;
+package com.example.bookmall.dto;
 
 import com.example.bookmall.constant.ProductCategory;
-import org.springframework.stereotype.Component;
 
-import java.util.Date;
+import javax.validation.constraints.NotNull;
 
+public class ProductRequest {
 
-@Component
-public class Product {
-
-    Integer productId;
+    @NotNull
     String productName;
+
+    @NotNull
     ProductCategory category;
+
+    @NotNull
     String imageUrl;
+
+    @NotNull
     Integer price;
+
+    @NotNull
     Integer stock;
+
     String description;
-    Date createdDate;
-    Date lastModifiedDate;
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
 
     public String getProductName() {
         return productName;
@@ -73,21 +69,5 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
     }
 }
